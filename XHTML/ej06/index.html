@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <title>Información sobre el producto</title>
+    <meta charset="utf-8"></head>
+
+<body>
+    <form   action="post.php"  method="POST" enctype="multipart/form-data">
+
+        <fieldset>
+            <legend>Datos básicos</legend>
+
+            <label for="nombre">Nombre:</label>
+            <br>
+            <input  type="text" name="nombre"   value=""    />
+            <br/>
+            <br>
+
+            <label for="apellidos">Apellidos:</label>
+            <br>
+            <input  type="text" name="apellidos"   value=""    />
+            <br>
+
+            <label for="contraseña">Contraseña</label>
+            <br>
+            <input  type="password" name="contraseña"   value="12345"    />
+            <br>
+            <br>
+            <textarea name="descripción" cols="40" rows="5"></textarea>
+            <br>
+            <br>
+
+            <label for="foto">Foto</label>
+            <br>
+            <input  type="file" name="foto" >
+            <br>
+            <br>
+            <br>
+
+            <input  type="checkbox" name="contador"   value="1" />
+            <label for="contador">Añadir contador de visitas</label>
+            <br/>
+        </fieldset>
+
+        <fieldset>
+            <legend>Datos económicos</legend>
+            <label for="precio">Precio:</label>
+            <input  type="text" name="precio"   value=""    />
+            €
+            <label for="impuestos">Impuestos</label>
+            <select name="impuestos" id="impuestos" >
+                <option value=""    selected="selected">-   Selecciona  -</option>
+
+                <option value="4">4%</option>
+
+                <option value="8">8%</option>
+
+                <option value="16">16%</option>
+
+                <option value="21">21%</option>
+
+            </select>
+            <br/>
+            <br>
+
+            <label for="promocion">Promoción:</label>
+            <br>
+            <input  type="radio"    name="promocion" value="ninguno"  checked />
+            Ninguno
+            <br>
+            <br>
+            <input  type="radio"    name="promocion" value="gratuito"   />
+            Transporte gratuito
+            <br>
+            <br>
+            <input  type="radio"    name="promocion" value="descuento"   />
+            Descuento 5%
+            <br>
+            </fieldset>
+        <br>
+        <input  type="submit"   name="enviar" value="Enviar"  />
+        <input  type="reset"   action="borrar" value="Borrar los datos introducidos"  />
+    </form>
+</body>
+</html>
