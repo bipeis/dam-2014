@@ -1,0 +1,38 @@
+ul{
+list-style: none;
+border: 5px;
+border-style: solid;
+}
+ul li{
+    position: relative;
+    width: 70px;
+}
+ul.vertical ul{
+    position: absolute;
+    left: 30px;
+    top: -1px;
+    display: none;
+    list-style: none;
+}
+ul.vertical li:hover > ul
+{
+    display: block;
+
+}
+
+ul li ul li:hover{
+color:F00;
+}
+ul.horizontal > li > ul{
+    position: absolute;
+    left: -41px;
+    top: 19px;
+    display: none;
+    list-style: none;
+}
+ul.horizontal > li{
+    display: inline;
+}
+ul.horizontal li:hover > ul{
+    display: block;
+}

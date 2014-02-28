@@ -1,5 +1,5 @@
 /* Toda la pagina */
-*{border: 1px solid #000;
+*{
 box-sizing: border-box;}
 
 
@@ -42,32 +42,54 @@ font-weight: normal;
 
 /*Textos */
 .bold{font-weight: bold;}
+.italic{font-style: italic;}
 .normal{font-weight: normal;}
 .small{font-size:0.8em;}
 .big{font-size: 1.5em;}
 .uppercase {text-transform: uppercase;}
-
-.list{list-style: none;
-    padding: 0;
-
+.list{list-style: none; padding: 0;}
+.center{text-align: center;}
+.list p{margin : 0;}
+.list li{padding: 20px 0;}
+.list li:first-child{padding-top: 0;}
+.list li h4{color: #7cbcf3;font-style: italic;}
+.list-blue li{
+    background: transparent url("bola.jpg") no-repeat 0 10px;
+    padding-left: 20px;
 }
-.center{
-text-align: center;
-}
 
+.price{font-size: 1.5em;font-weight: bold;}
 
 
 /* Colores */
-.txt-red{
-    color:#f00;
-}
-.bg-white{
-    background-color: : #FFF;
-}
+.txt-red{    color:#f00;}
+.bg-white{    background-color: : #FFF;}
 /*TODO*/
-.list-blue{
-    padding-left:20px;
+.list-blue{    padding-left:20px;}
 
+/*Botones*/
+.btn{
+    display: inline-block;
+    width: 100px;
+    padding: 5px;
+    margin: auto 5px;
+
+    color:#FFF;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+
+    border-radius: 3px;
+    box-shadow: 0 1px 4px #cdcdcd;
+    background-image: linear-gradient(to bottom, #999, #CCC)
+}
+
+.btn-red{
+    background-image: linear-gradient(to bottom, #f74040 80%, #d33535)
+}
+
+.btn-big{
+    padding: 10px inherit;
 }
 
 
@@ -79,18 +101,48 @@ text-align: center;
     padding: 40px 0;
 
 }
+
+.bg-gray:first-child .wrapper{
+padding-bottom: 0;
+}
+
+
+.description{
+    padding-left: 20px;
+}
+
+.wrapper:before, .wrapper:after,
+.clearfix:before, .clearfix:after{
+    content:"";
+    display: table;
+}
+
+.wrapper:after,
+.clearfix:after{
+    clear:both;
+}
+
+
 .fleft{float: left}
 .col-25{width:25%;}
 .col-50{width:50%;}
 .col-75{width:75%;}
+.col-100{width: 100%;}
 
+.well{
+    background-color:#FFF;
+    padding: 10px;
+    box-shadow: 0 0 5px #cdcdcd;
+}
 
-
+.well p{
+    margin: 0;
+}
 
 /* Cabecera*/
 /* Breadcrum en mayusculas */
 /* Actual en rojo */
-.breadcrum{
+.breadcrumb{
     text-transform: uppercase;
     list-style: none;
     padding:0;
@@ -101,3 +153,26 @@ text-align: center;
     color:red;
 }
 */
+
+.breadcrumb li{
+    display: inline-block;
+}
+
+.breadcrumb li:after{
+    content: "/";
+}
+
+.breadcrumb li:last-child:after{
+    content: "";
+}
+
+.breadcrumb a{
+    margin-right: 5px;
+}
+
+/*TODO*/
+/*
+    Elementos en linea de breadcrum
+    Botones
+    tabla
+    */
