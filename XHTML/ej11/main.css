@@ -1,0 +1,8 @@
+li:first-child{color:blue;}
+li:last-child{color:blue;}
+
+li:nth-child(5n+1){font-size:1em;}
+li:nth-child(5n+2){font-size:2em;}
+li:nth-child(5n+3){font-size:3em;}
+li:nth-child(5n+4){font-size:4em;}
+li:nth-child(5n+5){font-size:5em;}
