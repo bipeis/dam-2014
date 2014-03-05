@@ -96,9 +96,11 @@ font-weight: normal;
 
 /*Layout*/
 .wrapper{
-    width:990px;
+    /*width:990px;*/
+    width: 90%;
+    max-width: 990px;
     margin: 0 auto;
-    padding: 40px 0;
+    padding: 4.0404040404% 0;/*40px/990px*/
 
 }
 
@@ -123,11 +125,18 @@ padding-bottom: 0;
 }
 
 
-.fleft{float: left}
+.fleft{float: left;}
+.fright{float: right;}
+.overflowx{overflow-x: scroll;}
+
 .col-25{width:25%;}
 .col-50{width:50%;}
 .col-75{width:75%;}
 .col-100{width: 100%;}
+
+
+
+
 
 .well{
     background-color:#FFF;
@@ -138,6 +147,12 @@ padding-bottom: 0;
 .well p{
     margin: 0;
 }
+
+.read-more{
+    display: none;
+}
+
+
 
 /* Cabecera*/
 /* Breadcrum en mayusculas */
@@ -176,3 +191,89 @@ padding-bottom: 0;
     Botones
     tabla
     */
+
+.hidden{
+    display: none;
+}
+
+
+/**/
+
+@media screen and (max-width: 768px){
+    .wrapper{
+        padding: 2% 0;
+}
+    .col-25.well{
+    width:40%;
+}    .col-75.well{
+    width:60%;
+}
+
+h1, .h1{
+    font-size: 1.6em;
+    text-transform: none;
+}
+.description p{
+    height: 290px;
+    overflow: hidden;
+}
+
+.read-more{
+    display: block;
+}
+.well .price{
+    float: none;
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.well .btn-big{
+float: none;
+display: block;
+width: 100%;
+margin: 0;
+}
+
+.list li h4{
+    float: none;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.list li p{
+    float: none;
+    width: 100%;
+
+}
+}
+
+
+@media screen and (max-width: 480px){
+.wrapper{
+    width: 100%;
+    padding: 2%;
+}
+
+.breadcrumb{
+    float: left;
+}
+
+.navbar-toggle{
+    display: block;
+    float: right;
+}
+
+/*
+[class*="col-"]{
+    float: none;
+    width: 100%;
+    clear: both;
+}*/
+
+    .col-25.well{
+    width:100%;
+}    .col-75.well{
+    width:100%;
+}
+}
