@@ -4,8 +4,6 @@
             return (elems.length === 1) ? elems[0] : elems;
         };
 
-
-
 /*funcion anonima*/
 var anade = (function(){
    "use strict";/*modo estricto, fuerza obliga a utilizar javascript de manera correcta*/
@@ -13,7 +11,19 @@ var anade = (function(){
 
 
          var lista = $('#lista');
+         var lis = lista.children;//pra listeners ejemplo
         var count = lista.children.length;
+
+        var mostrarTexto = function(e){
+            console.log(lis);
+            console.log(e);
+        };
+
+        lista=addEventListener('click',mostrarTexto);
+        //for (var i = lis.length - 1; i >= 0; i--) {
+        //    lis[i].addEventListener('click',mostrarTexto());
+        //}
+
 
     var anade = function()
     {

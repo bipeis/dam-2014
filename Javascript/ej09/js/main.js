@@ -10,21 +10,21 @@ var comprobarMayusculas = function(palabra)
 
 
     return false;
-}
+};
 
 var comprobarMinusculas = function(palabra)
 {
     if (palabra && (palabra==palabra.toLowerCase())) return "Son todo minúsculas";
 
     return false;
-}
+};
 
 var comprobarMayusculasMinusculas = function(palabra)
 {
 
     return comprobarMayusculas(palabra)|| comprobarMinusculas(palabra)|| "Mezcla de mayusculas y minusculas";
 
-}
+};
 return comprobarMayusculasMinusculas;
 })();
 
