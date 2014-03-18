@@ -31,8 +31,8 @@ var $img = $('img[alt]');
 console.log($img);
 
 // Seleccionar todas las filas impares del cuerpo
-var $filas = $('tbody tr:odd').css('background-color', 'gray');
-console.log($filas);
+//var $filas = $('tbody tr:odd').css('background-color', 'gray');
+//console.log($filas);
 
 
 //DOM
@@ -106,7 +106,7 @@ for (var i=0; i<5; i++) {
 $myList.append(myItems.join(''));
 
 //Remover los ítems impares de la lista.
-$('#myList li:odd').remove();
+//$('#myList li:odd').remove();
 
 //Añadir otro elemento h2 y otro párrafo al último div.module.
 

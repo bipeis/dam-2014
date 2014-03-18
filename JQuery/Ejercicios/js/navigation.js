@@ -1,0 +1,23 @@
+$(function(){
+    'use strict';
+
+    $('#nav li')
+        .hover(function(){
+            $(this)
+                .addClass('hover')
+                .find('ul').show();
+        }, function(){
+            $(this)
+                .removeClass('hover')
+                .find('ul').hide();
+        })
+
+        .css({'cursor': 'pointer'})
+
+        .click(function(){
+            window.location.href =
+                $(this).find('a').attr('href');
+        });
+
+
+});
