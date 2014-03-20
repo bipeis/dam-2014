@@ -1,0 +1,24 @@
+//estados http
+
+var parestadosHTTP = document.createElement("p");
+parestadosHTTP.id="estadosparrafohttp";
+//estados
+var stringEstadoHTTP;
+switch(peticion_http.readyState)
+{
+    case 200:
+  stringEstadoHTTP = "200 Correcta";
+  break;
+case 404:
+  stringEstadoHTTP = "404 No encontrado";
+  break;
+case 500:
+  stringEstadoHTTP = " 500 Error de servidor";
+  break;
+
+default:
+  stringEstadoHTTP = "Error desconocido";
+}
+var nuevoEstadoHTTP = document.createTextNode(stringEstadoHTTP);
+parestadosHTTP.appendChild(nuevoEstadoHTTP);
+document.getElementById("codigo").appendChild(parestadosHTTP);

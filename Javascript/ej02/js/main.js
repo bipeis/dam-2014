@@ -23,7 +23,7 @@ var validarLetra = function(dni){
     var index = num % 23;
 
     return letras[index]===letra;
-}
+};
 
 var validarDNI = function(dni){
     return validarLongitud(dni) && validarNumero(dni) && validarLetra(dni);
