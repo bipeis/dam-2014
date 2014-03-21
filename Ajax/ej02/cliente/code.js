@@ -1,47 +1,91 @@
-(function(){
-    "use strict";/*modo estricto, fuerza obliga a utilizar javascript de manera correcta*/
+$(function(){
+    var noticias = [],
+        intervalo = null,
+        actual = 0,
+        playing = false;
 
-    window.onload = function() {
+    var $ticker    = $("#ticker");
+    var $detener   = $("#detener");
+    var $anterior  = $("#anterior");
+    var $siguiente = $("#siguiente");
 
-        setInterval(actualizaContenido, 5000);
+    var guardarNoticia = function(text) {
+        var fechaHora = new Date();
+        var hora = fechaHora.getHours().toString() + ":" + fechaHora.getMinutes().toString() + ":" + fechaHora.getSeconds().toString();
 
+        noticias.push({
+            hora: hora,
+            titular: text
+        });
 
+        actual = noticias.length - 1;
 
-
-  function actualizaContenido() {
-   var peticion_http;
-
-  // Obtener la instancia del objeto XMLHttpRequest
-  if(window.XMLHttpRequest) {
-    peticion_http = new XMLHttpRequest();
-  }
-  else if(window.ActiveXObject) {
-    peticion_http = new ActiveXObject("Microsoft.XMLHTTP");
-  }
-
-
-  // Preparar la funcion de respuesta
-  peticion_http.onreadystatechange = muestraContenido;
-
-
-  peticion_http.open('GET', '../servidor/generaContenidos.php', true);
-  peticion_http.send(null);
-
-  function muestraContenido(){
-    console.log(peticion_http);
-
-    var noticia = document.createElement("p");
-
-    var textoNoticia = document.createTextNode(peticion_http.responseText);
-
-console.log(contenCabeceras);
-
-
-// Añadir el nodo Text como hijo del nodo Element
-parCabeceras.appendChild(contenCabeceras);
-
-  }
-
-    }
+        mostrarNoticia(noticias[actual]);
     };
-})();
+
+    var mostrarNoticia = function(noticia){
+        var $noticia = $('<span/>', {
+            html : "<strong>" + noticia.hora + "</strong> " + noticia.titular
+        });
+
+        $ticker.html($noticia);
+        $ticker.css('background-color', '#FFFF99');
+
+        setTimeout(limpiaTicker, 300);
+    };
+
+    var limpiaTicker = function(){
+        $ticker.css('background-color', '#FAFAFA');
+    };
+
+    var iniciarIntervalo = function() {
+        $anterior.attr('disabled', true);
+        $siguiente.attr('disabled', true);
+
+        intervalo = setInterval(function() {
+            $.ajax({
+                url : '../servidor/generaContenidos.php',
+                cache : false,
+                success : guardarNoticia,
+                error : function(jqXHR, status, error) {
+                    console.log(error);
+                }
+            });
+        }, 3000);
+    };
+
+    var detenerIntervalo = function() {
+        clearInterval(intervalo);
+
+        $anterior.attr('disabled', false);
+        $siguiente.attr('disabled', false);
+    };
+
+    var toggleIntervalo = function() {
+        if(playing) {
+            playing = false;
+            detenerIntervalo();
+        } else {
+            iniciarIntervalo();
+            playing = true;
+        }
+    };
+
+    var anteriorNoticia = function() {
+        actual = (actual === 0) ? noticias.length - 1 : --actual;
+
+        mostrarNoticia(noticias[actual]);
+    };
+
+    var siguienteNoticia = function() {
+        actual = (actual === noticias.length -1 ) ? 0 : ++actual;
+
+        mostrarNoticia(noticias[actual]);
+    };
+
+    toggleIntervalo();
+    $detener.on('click', toggleIntervalo);
+    $anterior.on('click', anteriorNoticia);
+    $siguiente.on('click', siguienteNoticia);
+
+});
