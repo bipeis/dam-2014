@@ -36,19 +36,20 @@ $(function(){
 
 
     $(document).on('change', $("#provinciasops"), function(e){
+        console.log($("#municipios"));
         $("#municipios")[0].options.length = 0;
         //$municipios.html('');
 
         $.ajax({
             url : '../servidor/cargaMunicipiosJSON.php', //Es relativa al html y no al js
-            data : { provincia : $provincias.val()},
+            data : { provincia : $("#provinciasops").val()},
             type : 'POST',
             dataType : 'json',
             success : function(data, textStatus, jqXHR){
                 for(var prop in data){
 
                     elemento = new Option(data[prop],prop);
-                    $municipios[0].options.add(elemento);
+                    $("#municipios")[0].options.add(elemento);
 
                 }
             }
