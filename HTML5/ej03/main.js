@@ -2,22 +2,23 @@ $(function(){
     "use strict";
 
 
- var editor = document.getElementById ("edit");
-            //editorDoc = editor.contentWindow.document;
+//actualizar progress
 
 
-document.designMode = 'on';
+$(document).on('blur', 'input', function(){
+
+    console.log(this);
+
+    console.log(document.getElementById ("progress").value);
 
 
-$("#edit").contentEditable=true;
+    if( this.value===""){}
+        else{ document.getElementById ("progress").value++;}
 
 
-$(document).on('click', '#bold', function(){
 
-
-    document.execCommand('bold',false,null);
+    console.log(document.getElementById ("progress").value);
 });
-
 
 
 
