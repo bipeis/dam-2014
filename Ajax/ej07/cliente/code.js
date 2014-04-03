@@ -1,7 +1,5 @@
 $(function(){
 
-
-
         $.ajax({
                 url : '../servidor/cargaProvinciasJSON.php',
                 cache : false,
@@ -21,13 +19,6 @@ $(function(){
                     }
 
 },
-
-
-
-
-
-
-
                 error : function(jqXHR, status, error) {
                     console.log(error);
                 }
