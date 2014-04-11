@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Page Title</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+
+</head>
+
+<body>
+
+    <div data-role="page" id="foo" data-title="Page Foo">
+
+        <div data-role="header"></div>
+        <!-- /header -->
+
+        <div role="main" class="ui-content">
+
+            <a href="#bar">bar</a>
+
+            <th>
+                <h3>dialogo</h3>
+            </th>
+            <td>
+                <a href="page-transitions-dialog.html" data-role="button" data-rel="dialog" data-transition="flip" data-inline="true">dialog</a>
+            </td>
+
+            <a href="#popupBasic" data-rel="popup">Open Popup</a>
+
+            <div data-role="popup" id="popupBasic">
+                <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+
+                <p>
+                    This is a completely basic popup, no options set.
+                    <p></div>
+                </div>
+
+                <a href="#mypanel" data-rel="panel">Open Panel</a>
+
+
+                <div data-role="panel" id="mypanel" data-position="right">
+
+                    <!-- panel content goes here -->
+                    <h1>contenido del panel</h1>
+                </div>
+                <!-- /panel -->
+
+                <!-- /content -->
+
+                <div data-role="footer"></div>
+                <!-- /footer --> </div>
+            <!-- /page -->
+
+            <div data-role="page" id="bar" data-title="Page Bar">
+
+                <div data-role="header"></div>
+                <!-- /header -->
+
+                <div role="main" class="ui-content"></div>
+                <!-- /content -->
+                <p>
+                    <a href="#foo" data-rel="dialog" data-transition="slide">Back to foo</a>
+                </p>
+
+                <div data-role="footer"></div>
+                <!-- /footer --> </div>
+            <!-- /page -->
+
+</body>
+
+        </html>
