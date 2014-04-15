@@ -5,6 +5,7 @@ $(function(){
                 cache : false,
                 contentType: "application/json",
                 success : function(data, status,jqXHR){
+                    console.log("jqXHR");
                     console.log(jqXHR);
                     var respuesta = JSON.parse(jqXHR.responseText);
                     console.log(respuesta);
@@ -14,15 +15,12 @@ $(function(){
                         console.log(respuesta[i]);
 
                         document.getElementById("provinciasops").innerHTML+='<option>'+ respuesta[i]+ '</option>';
-
-
                     }
-
-},
+                },
                 error : function(jqXHR, status, error) {
                     console.log(error);
                 }
-});
+            });
 
 
 
