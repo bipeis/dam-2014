@@ -1,4 +1,4 @@
-define('fizzbuzz', [],function(){
+define('fizzbuzz', ['Fizz','Buzz'],function(Fizz,Buzz){
     'use strict';
 
     var fizzbuzz = function(numero){
@@ -8,13 +8,13 @@ define('fizzbuzz', [],function(){
         var msg='';
         for(var i=1;i<=numero;i++){
             msg='';
-            if (!(i%3)) {
+            if (Fizz.fizz(i)) {
                 msg+='Fizz';
             }
-            if (!(i%5)) {
+            if (Buzz.buzz(i)) {
                 msg+='Buzz';
             }
-            if (i%3 && i%5) {
+            if (!(Fizz.fizz(i)) && !(Buzz.buzz(i)) ){
                 msg=i;
             }
             lista[i-1]=msg;
