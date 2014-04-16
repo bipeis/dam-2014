@@ -28,6 +28,8 @@ require.config({
 
             it('Should  return  1', function    ()  {
 
+                assert.equal('', mod.fizzbuzz());
+                assert.equal('', mod.fizzbuzz('a'));
                 assert.equal(1, mod.fizzbuzz(1));
                 assert.equal('1,2', mod.fizzbuzz(2));
                 assert.equal('1,2,Fizz', mod.fizzbuzz(3));
