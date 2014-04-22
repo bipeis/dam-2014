@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <title>Ejercicio 3 HTML5</title>
+
+    <link rel="alternate" type="application/atom+xml" title="My Weblog feed" href="/feed/" />
+    <link rel="search" type="application/opensearchdescription+xml" title="My Weblog search" href="opensearch.xml" />
+    <script src="jquery-2.1.0.min.js"></script>
+
+</head>
+
+<body>
+
+    <form id="form" action="">
+
+        <label for="email">email:</label>
+        <input id="email" type="email">
+        <br>
+        <br>
+        <label for="url">url:</label>
+        <input id="url" type="url">
+        <br>
+        <label for="date">date:</label>
+        <input id="date" type="date">
+        <br>
+        <label for="time">time:</label>
+        <input id="time" type="time">
+        <br>
+        <label for="datetime">datetime:</label>
+        <input id="datetime" type="datetime">
+        <br>
+        <label for="month">month:</label>
+        <input id="month" type="month">
+        <br>
+        <label for="week">week:</label>
+        <input id="week" type="week">
+
+        <input id="number" type="number" autofocus placeholder="number" required="true" autocomplete="on"min="0" max="10">
+        <br>
+        <label for="range">range:</label>
+        <input id="range" type="range">
+        <br>
+        <label for="tel">tel:</label>
+        <input id="tel" type="tel">
+        <br>
+        <label for="search">search:</label>
+        <input id="search" type="search">
+        <br>
+        <label for="color">color:</label>
+        <input id="color" type="color">
+        <br>
+
+        <!--El nuevo elemento datalist, que contenga algunos nombres de provincia y un campo de texto
+//que se relacione con él.
+  -->
+        <label for="form-person-title">form-person-title:</label>
+        <input id="form-person-title" type="text" list="mylist">
+        <datalist id="mylist">
+            <option label="Guipuzcoa" value="Guipuzcoa"></option>
+            <option label="Vizcaya" value="Vizcaya"></option>
+            <option label="Alava" value="Alava"></option>
+        </datalist>
+        <br>
+
+        <label for="file">file:</label>
+        <input id="file" type="file" multiple>
+        <br>
+        <label for="pass">pass:</label>
+        <input id="pass" type="password" maxlength="8" pattern="^[0-9][.]*[A-Z]+">
+        <input id="submit" type="submit" value="Enviar"></form>
+    progress
+    <progress id="progress" value="0" max="14" form="form"></progress>
+
+    <script type="text/javascript" src="main.js"></script>
+
+</body>
+</html>
