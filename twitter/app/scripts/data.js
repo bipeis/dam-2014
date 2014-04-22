@@ -1,18 +1,20 @@
-define('data',['ydn-db'], function() {
+define('data',['ydn-db'], function(ydn) {
     'use strict';
 
-    console.log("data");
-    var db = new ydn.db.Storage('twitter-db');
+    console.log('Data module started');
+
+
+    var dbName = 'TwitterDB',
+        keyPath = 'id',
+        db = new ydn.db.Storage(dbName);
 
     var addTweet = function(tweet,success,error){
 
-        var req = db.put({name: 'tweets', keyPath: 'id'}, tweet);
-       /* req.done(function(key) {
+        var req = db.add({name: 'tweets', keyPath: keyPath}, tweet);
 
-        });
-        */
+        console.log('req');
         console.log(req);
-        req.done(success(req.key));
+        req.done(success);
         req.fail(error);
 
     };

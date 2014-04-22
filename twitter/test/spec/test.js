@@ -46,6 +46,7 @@
                     }*/
                 ];
                 DB.addTweet(tweet,function(key){
+                    console.log('key');
                     console.log(key);
                     assert.equal('8423375524',key);
                     done();
