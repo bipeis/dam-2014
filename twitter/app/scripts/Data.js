@@ -1,4 +1,4 @@
-define('data',['ydn-db'], function(ydn) {
+define('Data',['ydn-db'], function(ydn) {
     'use strict';
 
     console.log('Data module started');
@@ -10,7 +10,7 @@ define('data',['ydn-db'], function(ydn) {
 
     var addTweet = function(tweet,success,error){
 
-        var req = db.add({name: 'tweets', keyPath: keyPath}, tweet);
+        var req = db.add({name: dbName, keyPath: keyPath}, tweet);
 
         console.log('req');
         console.log(req);

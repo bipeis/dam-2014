@@ -4,7 +4,7 @@
     'use strict';
 
     require.config({
-        baseUrl : '../app/scripts',
+        baseUrl : '../app/scripts/',
         paths :{
             'ydn-db': '../bower_components/ydn-db/jsc/ydn.db-dev',
         },
@@ -19,8 +19,8 @@
         var DB;
 
         beforeEach(function(done){
-            require(['data'], function(data){
-                DB=data;
+            require(['Data'], function(Data){
+                DB=Data;
                 done();
             });
         });
@@ -46,6 +46,7 @@
                     }*/
                 ];
                 DB.addTweet(tweet,function(key){
+                    console.log('key');
                     console.log(key);
                     assert.equal('8423375524',key);
                     done();
