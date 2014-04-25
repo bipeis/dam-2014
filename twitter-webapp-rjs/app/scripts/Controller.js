@@ -31,7 +31,17 @@ define('Controller',['Data', 'Service','UI'],function(DB,srv,UI){
 
     };
 
+    var showLatestTweets = function(){
+
+        DB.getAllTweets(function(tweets){
+            UI.showTweetsList(tweets);
+        },error);
+    };
+
+
+
     return{
-        getTweetsFromTwitter : getTweetsFromTwitter
+        getTweetsFromTwitter : getTweetsFromTwitter,
+        showLatestTweets : showLatestTweets
     };
 });

@@ -34,6 +34,8 @@
 
         describe('#addTweet', function () {
             it('Add one tweet', function (done) {
+                console.log("DB en test");
+                console.log(DB);
                 DB.addTweet({id:'1234567890', text:'Mocha testing v2'}, function(){
                     done();
                 }, function(err){
@@ -56,7 +58,7 @@
                     {id:'22222', text:'Mocha testing v3'}
                 ];
 
-                DB.addTweet(tweets, function(keys){
+                DB.addTweets(tweets, function(keys){
                     assert.equal(2, keys.length);
                     done();
                 }, function(err){

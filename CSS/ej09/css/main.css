@@ -1,0 +1,279 @@
+/* Toda la pagina */
+*{
+box-sizing: border-box;}
+
+
+html, body{
+ background-color: #f7f7f7;
+ }
+
+/*14pt,
+ interlineado 20,72,em hay que hacer relativa al tamaño 14-> 20,72/14
+ tamaño de letra Source Sans Pro,
+  color 464646*/
+body{
+    font: 14pt/1.48em "Source Sans Pro", sans-serif;
+    color: #464646;
+}
+
+a{
+    color:#000;
+    text-decoration: none;
+}
+
+ul{
+    margin: 0;
+}
+
+table{
+    width:100%;
+}
+h1,h2,h3,h4,h5,h6
+.h1 .h2 .h3 .h4 .h5 .h6{
+    margin-top: 0;
+}
+
+h1, .h1{
+font-size: 2em; /* 28pt/14pt */
+line-height: 1.08em;
+text-transform: uppercase;
+font-weight: normal;
+}
+
+/*Textos */
+.bold{font-weight: bold;}
+.italic{font-style: italic;}
+.normal{font-weight: normal;}
+.small{font-size:0.8em;}
+.big{font-size: 1.5em;}
+.uppercase {text-transform: uppercase;}
+.list{list-style: none; padding: 0;}
+.center{text-align: center;}
+.list p{margin : 0;}
+.list li{padding: 20px 0;}
+.list li:first-child{padding-top: 0;}
+.list li h4{color: #7cbcf3;font-style: italic;}
+.list-blue li{
+    background: transparent url("bola.jpg") no-repeat 0 10px;
+    padding-left: 20px;
+}
+
+.price{font-size: 1.5em;font-weight: bold;}
+
+
+/* Colores */
+.txt-red{    color:#f00;}
+.bg-white{    background-color: : #FFF;}
+/*TODO*/
+.list-blue{    padding-left:20px;}
+
+/*Botones*/
+.btn{
+    display: inline-block;
+    width: 100px;
+    padding: 5px;
+    margin: auto 5px;
+
+    color:#FFF;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+
+    border-radius: 3px;
+    box-shadow: 0 1px 4px #cdcdcd;
+    background-image: linear-gradient(to bottom, #999, #CCC)
+}
+
+.btn-red{
+    background-image: linear-gradient(to bottom, #f74040 80%, #d33535)
+}
+
+.btn-big{
+    padding: 10px inherit;
+}
+
+
+
+/*Layout*/
+.wrapper{
+    /*width:990px;*/
+    width: 90%;
+    max-width: 990px;
+    margin: 0 auto;
+    padding: 4.0404040404% 0;/*40px/990px*/
+
+}
+
+.bg-gray:first-child .wrapper{
+padding-bottom: 0;
+}
+
+
+.description{
+    padding-left: 20px;
+}
+
+.wrapper:before, .wrapper:after,
+.clearfix:before, .clearfix:after{
+    content:"";
+    display: table;
+}
+
+.wrapper:after,
+.clearfix:after{
+    clear:both;
+}
+
+
+.fleft{float: left;}
+.fright{float: right;}
+.overflowx{overflow-x: scroll;}
+
+.col-25{width:25%;}
+.col-50{width:50%;}
+.col-75{width:75%;}
+.col-100{width: 100%;}
+
+
+
+
+
+.well{
+    background-color:#FFF;
+    padding: 10px;
+    box-shadow: 0 0 5px #cdcdcd;
+}
+
+.well p{
+    margin: 0;
+}
+
+.read-more{
+    display: none;
+}
+
+
+
+/* Cabecera*/
+/* Breadcrum en mayusculas */
+/* Actual en rojo */
+.breadcrumb{
+    text-transform: uppercase;
+    list-style: none;
+    padding:0;
+}
+/*
+.breadcrum .actual,
+.menu .actual{
+    color:red;
+}
+*/
+
+.breadcrumb li{
+    display: inline-block;
+}
+
+.breadcrumb li:after{
+    content: "/";
+}
+
+.breadcrumb li:last-child:after{
+    content: "";
+}
+
+.breadcrumb a{
+    margin-right: 5px;
+}
+
+/*TODO*/
+/*
+    Elementos en linea de breadcrum
+    Botones
+    tabla
+    */
+
+.hidden{
+    display: none;
+}
+
+
+/**/
+
+@media screen and (max-width: 768px){
+    .wrapper{
+        padding: 2% 0;
+}
+    .col-25.well{
+    width:40%;
+}    .col-75.well{
+    width:60%;
+}
+
+h1, .h1{
+    font-size: 1.6em;
+    text-transform: none;
+}
+.description p{
+    height: 290px;
+    overflow: hidden;
+}
+
+.read-more{
+    display: block;
+}
+.well .price{
+    float: none;
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.well .btn-big{
+float: none;
+display: block;
+width: 100%;
+margin: 0;
+}
+
+.list li h4{
+    float: none;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.list li p{
+    float: none;
+    width: 100%;
+
+}
+}
+
+
+@media screen and (max-width: 480px){
+.wrapper{
+    width: 100%;
+    padding: 2%;
+}
+
+.breadcrumb{
+    float: left;
+}
+
+.navbar-toggle{
+    display: block;
+    float: right;
+}
+
+/*
+[class*="col-"]{
+    float: none;
+    width: 100%;
+    clear: both;
+}*/
+
+    .col-25.well{
+    width:100%;
+}    .col-75.well{
+    width:100%;
+}
+}
