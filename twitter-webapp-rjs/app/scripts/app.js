@@ -1,9 +1,24 @@
-define(['Controller'], function(Controller) {
+define(['Controller','Lungo'], function(Controller,Lungo) {
     'use strict';
 
     console.log('App started');
 
-    Controller.getTweetsFromTwitter();
+    var init = function(){
 
-    Controller.showLatestTweets();
+        Lungo.init({
+        });
+
+        Controller.getTweetsFromTwitter();
+
+        Controller.showLatestTweets();
+
+    };
+
+
+
+
+    $(function(){
+        init();
+    });
+
 });
